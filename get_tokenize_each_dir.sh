@@ -1,0 +1,11 @@
+#!/bin/sh
+
+python3 tokenize_livedoor_test_specific.py dokujo-tsushin
+python3 tokenize_livedoor_test_specific.py it-life-hack
+python3 tokenize_livedoor_test_specific.py kaden-channel
+python3 tokenize_livedoor_test_specific.py livedoor-homme
+python3 tokenize_livedoor_test_specific.py movie-enter
+python3 tokenize_livedoor_test_specific.py peachy
+python3 tokenize_livedoor_test_specific.py smax
+python3 tokenize_livedoor_test_specific.py sports-watch
+python3 tokenize_livedoor_test_specific.py topic-news

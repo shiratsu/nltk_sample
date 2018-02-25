@@ -22,11 +22,11 @@ def makeData(strDir):
 
         #print(d)
 
-        dicSentence[d] = ''
-        arySentence = []
         filelist = glob.glob(d+'/*')
 
         for strfile in filelist:
+            arySentence = []
+            dicSentence[strfile] = ''
 
             #print(strfile)
 
@@ -37,8 +37,8 @@ def makeData(strDir):
                 for line in flines:
                     arySentence.append(line)
 
+            dicSentence[strfile] = ''.join(arySentence)
             
-        dicSentence[d] = ''.join(arySentence)
 
     return dicSentence
 
@@ -84,8 +84,8 @@ if __name__ == '__main__':
     dictionary = corpora.Dictionary(words)
     # no_berow: 使われてる文章がno_berow個以下の単語無視
     # no_above: 使われてる文章の割合がno_above以上の場合無視
-    #dictionary.filter_extremes(no_below=20, no_above=0.3)    
-    dictionary.filter_extremes(no_below=5,no_above=0.7)    
+    dictionary.filter_extremes(no_below=20, no_above=0.3)    
+    #dictionary.filter_extremes(no_below=5,no_above=0.7)    
     print("-------------------token後-------------------")
     print(dictionary.token2id)
     dictionary.save_as_text('livedoor_test1.dict')
